@@ -6,6 +6,8 @@ collection of notes.
 """
 import json
 import os
+from datetime import datetime
+
 from note import Note
 
 
@@ -41,10 +43,14 @@ class NoteRepository:
         else:
             print("There's no notes yet.")
 
-    def list_notes(self):
+    def list_notes(self, date_filter: datetime):
         if self.notes_list:
             for note in self.notes_list:
-                print(note, '\n')
+                if date_filter:
+                    if datetime.strptime(note.timestamp, "%Y-%m-%d %H:%M:%S").date() == date_filter.date():
+                        print(note, '\n')
+                else:
+                    print(note, '\n')
         else:
             print("There's no notes yet.")
 

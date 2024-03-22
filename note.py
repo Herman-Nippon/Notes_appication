@@ -7,7 +7,7 @@ from datetime import datetime
 
 
 class Note:
-    def __init__(self, id: int, title: str = None, body: str = None, timestamp: datetime = None):
+    def __init__(self, id: int, title: str = None, body: str = None, timestamp: str = None):
         self.id = id
         self.title = input("Enter note title: ") if not title else title
         self.body = input("Enter note body: ") if not body else body
