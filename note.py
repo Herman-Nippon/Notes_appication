@@ -1,9 +1,28 @@
-"""
-Note Class: Create a Note class to represent individual notes.
-This class should encapsulate the properties of a note (such as id, title, body, timestamp)
-and provide methods for editing and deleting notes.
-"""
 from datetime import datetime
+
+"""
+Note class: 
+This class manages individual notes within a note-taking system.
+
+Fields:
+- id: An integer representing the unique identifier of the note.
+- title: A string containing the title of the note.
+- body: A string containing the main content or body of the note.
+- timestamp: A string representing the timestamp of the note's creation or last modification.
+
+Methods:
+- __init__: 
+    Initializes a note object.
+    
+- edit: 
+    Modifies the title and/or body of the note and updates the timestamp to reflect the modification time.
+    
+- match_id -> bool: 
+    Compares the provided note ID with the ID of the current note and returns True if they match, False otherwise.
+    
+- __repr__: 
+    Returns a string representation of the note, including its ID, title, body, and timestamp.
+"""
 
 
 class Note:

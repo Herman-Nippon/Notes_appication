@@ -1,5 +1,21 @@
 import argparse
 
+"""
+Parser class:
+This class provides a static method to parse command-line arguments for the Notes++ application. 
+It utilizes the argparse module to define and parse command-line options.
+
+Methods:
+- parse_args(args): 
+    Static method that accepts a list of command-line arguments and parses them using the argparse module.
+  
+Description of Arguments:
+- --add: Specifies to add a new note to the application.
+- --list: Specifies to list all notes stored in the application.
+- --delete: Specifies to delete a note from the application.
+- --edit: Specifies to edit an existing note in the application.
+- --date: Optional argument to filter notes by a specific date (format: YYYY-MM-DD).
+"""
 
 class Parser:
     @staticmethod

@@ -1,14 +1,41 @@
-"""
-NoteRepository Class: Create a NoteRepository class responsible for loading, saving, adding, listing, deleting,
-and editing notes.
-This class should handle interactions with the storage (in this case, JSON notes_file) and manage the
-collection of notes.
-"""
 import json
 import os
 from datetime import datetime
 
 from note import Note
+
+"""
+NoteRepository class:
+This class manages a collection of notes within a note-taking system. 
+It provides functionalities for loading notes from a file, saving notes to a file,
+adding new notes, deleting existing notes, listing notes, and editing notes.
+
+Fields:
+- notes_file: A string representing the file path where notes are stored.
+- notes_list: A list of Note objects representing the collection of notes managed by the repository.
+
+Methods:
+- __init__: 
+    Initializes a NoteRepository object.
+
+- load -> list[Note]: 
+    Loads notes from the specified file path if it exists, otherwise returns an empty list.
+    
+- save: 
+    Saves the current state of notes to the file specified by notes_file.
+    
+- add_note:
+    Adds a new note to the repository with a unique ID.
+    
+- delete_note:
+    Deletes a note from the repository based on the provided ID.
+    
+- list_notes:
+    Lists all notes in the repository optionally filtered by a specific date.
+    
+- edit_note:
+    Allows editing of an existing note's title, body, or both based on the provided ID.
+"""
 
 
 class NoteRepository:
@@ -16,7 +43,7 @@ class NoteRepository:
         self.notes_file = notes_file
         self.notes_list: list[Note] = self.load()
 
-    def load(self):
+    def load(self) -> list[Note]:
         if os.path.exists(self.notes_file):
             with open(self.notes_file, "r") as f:
                 return [Note(**note_data) for note_data in json.load(f)]

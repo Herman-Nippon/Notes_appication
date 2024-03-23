@@ -1,12 +1,42 @@
-"""
-Main Application Class: Create a NoteApplication class that serves as the main entry point of the application.
-This class should instantiate the NoteRepository and handle command-line arguments.
-"""
 import sys
 from datetime import datetime
 
 from input_parser import Parser
 from note_repository import NoteRepository
+
+"""
+MainApplication class:
+This class serves as the main interface for interacting with the note-taking application.
+It processes user input, delegates actions to the NoteRepository, and manages the overall flow of the application.
+
+Fields:
+- repo: A NoteRepository object representing the repository where notes are stored.
+
+Methods:
+- __init__:
+    Initializes a MainApplication object with a NoteRepository instance.
+    
+- run:
+    Executes the application based on the provided command-line arguments.
+    
+- parse_args:
+    Parses the command-line arguments to determine the action to be performed.
+    
+- add_note:
+    Calls the NoteRepository's add_note method to add a new note.
+    
+- list_notes:
+    Calls the NoteRepository's list_notes method to display notes, optionally filtered by date.
+    
+- delete_note:
+    Calls the NoteRepository's delete_note method to delete a note.
+    
+- edit_note:
+    Calls the NoteRepository's edit_note method to edit a note.
+    
+- save:
+    Calls the NoteRepository's save method to persist changes to the notes file.
+"""
 
 
 class MainApplication:
