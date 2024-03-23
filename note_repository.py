@@ -42,6 +42,7 @@ class NoteRepository:
     def __init__(self, notes_file: str):
         self.notes_file = notes_file
         self.notes_list: list[Note] = self.load()
+        self.sort_repo_by_date()
 
     def load(self) -> list[Note]:
         if os.path.exists(self.notes_file):
@@ -49,6 +50,9 @@ class NoteRepository:
                 return [Note(**note_data) for note_data in json.load(f)]
         else:
             return []
+
+    def sort_repo_by_date(self):
+        self.notes_list.sort(key=lambda x: x.timestamp)
 
     def save(self):
         with open(self.notes_file, "w") as f:
