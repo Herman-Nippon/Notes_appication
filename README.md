@@ -76,7 +76,7 @@ Example usage:
   python main_application.py --list --date 2024-03-23
   ```
   
-- You can also use `--list DATE` with delete and edit, if you want to see notes for specific dates.
+- You can also use `--date DATE` with delete and edit, if you want to see notes for specific dates.
 
   ```
   python main_application.py --edit --date 2024-03-23
