@@ -17,6 +17,7 @@ Description of Arguments:
 - --date: Optional argument to filter notes by a specific date (format: YYYY-MM-DD).
 """
 
+
 class Parser:
     @staticmethod
     def parse_args(args):
