@@ -64,8 +64,6 @@ class MainApplication:
         elif parsed_args.edit:
             self.repo.list_notes(date_filter)
             self.repo.edit_note()
-        else:
-            print("Usage: python notes.py [--add/--list/--delete/--edit]")
 
         self.repo.save()
 

@@ -29,4 +29,7 @@ class Parser:
         parser.add_argument("--edit", action="store_true", help="Edit a note")
         parser.add_argument("--date", type=str, help="Filter notes by date (format: YYYY-MM-DD)")
 
+        if not args:
+            parser.print_help()
+
         return parser.parse_args(args)
